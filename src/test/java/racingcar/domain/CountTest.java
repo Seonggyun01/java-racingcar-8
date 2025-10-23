@@ -39,7 +39,7 @@ class CountTest {
         assertSimpleTest(() ->{
             assertThatThrownBy(()->{new Count("2147483648");})
                     .isInstanceOf(IllegalArgumentException.class)
-                    .hasMessage("횟수는 양수를 입력해야합니다.");
+                    .hasMessage("횟수는 정수를 입력해야합니다.");
         });
     }
 
