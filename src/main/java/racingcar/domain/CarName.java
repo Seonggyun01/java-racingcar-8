@@ -9,11 +9,11 @@ public class CarName {
     private final String name;
 
     public CarName(String name){
+        validate(name);
         this.name = name;
-        validate();
     }
 
-    private void validate(){
+    private void validate(String name){
         if(name == null || name.isEmpty()){
             throw new IllegalArgumentException("이름은 비어있을 수 없습니다.");
         }
