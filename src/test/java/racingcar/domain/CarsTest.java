@@ -22,7 +22,10 @@ class CarsTest {
             Cars winner = cars.findWinners();
 
             assertThat(winner.getCarList().size()).isEqualTo(1);
-            assertThat(winner.getCarList().get(0).getCarName()).isEqualTo("aaa");
+            assertThat(cars.getCarList())
+                    .extracting("carName")
+                    .contains("aaa");
+
         });
     }
 
@@ -40,8 +43,9 @@ class CarsTest {
             Cars winners = cars.findWinners();
 
             assertThat(winners.getCarList().size()).isEqualTo(2);
-            assertThat(winners.getCarList().get(0).getCarName()).isEqualTo("aaa");
-            assertThat(winners.getCarList().get(1).getCarName()).isEqualTo("bbb");
+            assertThat(cars.getCarList())
+                    .extracting("carName")
+                    .contains("aaa","bbb");
         });
     }
 
@@ -60,9 +64,9 @@ class CarsTest {
             Cars winners = cars.findWinners();
 
             assertThat(winners.getCarList().size()).isEqualTo(3);
-            assertThat(winners.getCarList().get(0).getCarName()).isEqualTo("aaa");
-            assertThat(winners.getCarList().get(1).getCarName()).isEqualTo("bbb");
-            assertThat(winners.getCarList().get(2).getCarName()).isEqualTo("ccc");
+            assertThat(cars.getCarList())
+                    .extracting("carName")
+                    .contains("aaa","bbb","ccc");
         });
     }
 }
