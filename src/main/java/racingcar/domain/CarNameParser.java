@@ -7,7 +7,7 @@ public class CarNameParser {
 
     public static List<String> parse(String rawCarnames) {
 
-        String[] parsedCarname = rawCarnames.split(",");
+        String[] parsedCarname = rawCarnames.split(",",-1);
         return List.of(parsedCarname);
     }
 }
