@@ -32,4 +32,8 @@ public class OutputView {
         printWinnersMessage();
         System.out.println(winnersJoined);
     }
+
+    public void printLine(){
+        System.out.println();
+    }
 }
