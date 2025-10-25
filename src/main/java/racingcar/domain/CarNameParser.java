@@ -3,7 +3,7 @@ package racingcar.domain;
 import java.util.List;
 
 public class CarNameParser {
-    public CarNameParser() {}
+    private CarNameParser() {}
 
     public static List<String> parse(String rawCarnames) {
 
