@@ -31,7 +31,7 @@ public class Cars {
 
     public String[] getWinnersName(){
         return new String[]{carList.stream().
-                map(Car::getCarName).collect(Collectors.joining(" "))};
+                map(Car::getCarName).collect(Collectors.joining(", "))};
     }
 
     public List<Car> getCarList(){
