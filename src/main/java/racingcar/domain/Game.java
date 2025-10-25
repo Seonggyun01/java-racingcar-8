@@ -12,9 +12,13 @@ public class Game {
 
     public void play(){
         for(Car car: cars.getCarList()){
-            if(Randoms.pickNumberInRange(0,9)>=MOVABLE_LOWER_BOUND){
-                car.move();
-            }
+            moveIfMovable(car);
+        }
+    }
+
+    private static void moveIfMovable(Car car) {
+        if(Randoms.pickNumberInRange(0,9)>=MOVABLE_LOWER_BOUND){
+            car.move();
         }
     }
 
