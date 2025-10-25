@@ -21,13 +21,15 @@ public class RacingController {
         String inputCarName;
         String inputCount;
 
-        //사용자 입력 받기
+        //자동차 이름 입력받기
         inputCarName = getInputCarName();
-        inputCount = getInputCount();
         //사용자 입력 (,)로 분리하기
         List<String> carNames = CarNameParser.parse(inputCarName);
         //Cars 객체 생성
         Cars cars = Cars.fromNames(carNames);
+
+        //횟수 입력받기
+        inputCount = getInputCount();
         //Count로 횟수 관리
         Count count = new Count(inputCount);
 
