@@ -3,7 +3,6 @@ package racingcar.domain;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -87,4 +86,23 @@ class CarNameTest {
                     .hasMessage("이름에 특수문자는 입력할 수 없습니다.");
         });
     }
+
+    @Test
+    void 이름_앞에_특수문자_테스트() {
+        assertSimpleTest(() ->{
+            assertThatThrownBy(()->{new CarName("?zzzz");})
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessage("이름에 특수문자는 입력할 수 없습니다.");
+        });
+    }
+
+    @Test
+    void 이름_뒤에_특수문자_테스트() {
+        assertSimpleTest(() ->{
+            assertThatThrownBy(()->{new CarName("zzzz%");})
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessage("이름에 특수문자는 입력할 수 없습니다.");
+        });
+    }
+
 }
