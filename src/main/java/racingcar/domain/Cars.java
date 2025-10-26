@@ -30,8 +30,9 @@ public class Cars {
     }
 
     public String[] getWinnersName(){
-        return new String[]{carList.stream().
-                map(Car::getCarName).collect(Collectors.joining(", "))};
+        return carList.stream()
+                .map(Car::getCarName)
+                .toArray(String[]::new);
     }
 
     public List<Car> getCarList(){
