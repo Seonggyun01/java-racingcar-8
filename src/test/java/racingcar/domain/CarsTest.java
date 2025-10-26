@@ -2,7 +2,6 @@ package racingcar.domain;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
@@ -18,11 +17,9 @@ class CarsTest {
                     new Car("ccc")));
 
             cars.getCarList().get(0).move();
-
             Cars winner = cars.findWinners();
-
             assertThat(winner.getCarList().size()).isEqualTo(1);
-            assertThat(cars.getCarList())
+            assertThat(winner.getCarList())
                     .extracting("carName")
                     .contains("aaa");
 
@@ -43,7 +40,7 @@ class CarsTest {
             Cars winners = cars.findWinners();
 
             assertThat(winners.getCarList().size()).isEqualTo(2);
-            assertThat(cars.getCarList())
+            assertThat(winners.getCarList())
                     .extracting("carName")
                     .contains("aaa","bbb");
         });
@@ -64,7 +61,7 @@ class CarsTest {
             Cars winners = cars.findWinners();
 
             assertThat(winners.getCarList().size()).isEqualTo(3);
-            assertThat(cars.getCarList())
+            assertThat(winners.getCarList())
                     .extracting("carName")
                     .contains("aaa","bbb","ccc");
         });
