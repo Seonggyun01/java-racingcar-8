@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.sun.nio.sctp.IllegalReceiveException;
 import org.junit.jupiter.api.Test;
 
 class CountTest {
@@ -58,6 +59,15 @@ class CountTest {
             assertThatThrownBy(()->{new Count("");})
                     .isInstanceOf(IllegalArgumentException.class)
                     .hasMessage("횟수를 입력해주세요.");
+        });
+    }
+
+    @Test
+    void 숫자가_아닌_입력_테스트(){
+        assertSimpleTest(()->{
+            assertThatThrownBy(()->{new Count("1번");})
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessage("횟수는 정수를 입력해야합니다.");
         });
     }
 }
