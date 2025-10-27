@@ -7,33 +7,33 @@ public class OutputView {
     private final String WINNERS_MESSAGE_PREFIX = "최종 우승자 : ";
     private final String POSITION_SYMBOL = "-";
 
-    public void printCarNamesPrompt(){
+    public void printCarNamesPrompt() {
         System.out.println(INPUT_CAR_NAMES_MESSAGE);
     }
 
-    public void printCountPrompt(){
+    public void printCountPrompt() {
         System.out.println(INPUT_COUNT_MESSAGE);
     }
 
-    public void printResultMessage(){
+    public void printResultMessage() {
         System.out.println(RESULT_MESSAGE);
     }
 
-    public void printNameAndPosition(String carName, int position){
-        System.out.println(carName +" : "+ POSITION_SYMBOL.repeat(position));
+    public void printNameAndPosition(String carName, int position) {
+        System.out.println(carName + " : " + POSITION_SYMBOL.repeat(position));
     }
 
-    public void printWinnersMessage(){
+    public void printWinnersMessage() {
         System.out.print(WINNERS_MESSAGE_PREFIX);
     }
 
-    public void printWinners(String... winners){
+    public void printWinners(String... winners) {
         String winnersJoined = String.join(", ", winners);
         printWinnersMessage();
         System.out.println(winnersJoined);
     }
 
-    public void printLine(){
+    public void printLine() {
         System.out.println();
     }
 }

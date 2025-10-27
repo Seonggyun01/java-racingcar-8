@@ -6,16 +6,16 @@ public class Car {
     private final CarName carName;
     private int position;
 
-    public Car(String name){
+    public Car(String name) {
         this.carName = new CarName(name);
         position = INIT_POSITION;
     }
 
-    public void move(){
+    public void move() {
         this.position++;
     }
 
-    public String getCarName(){
+    public String getCarName() {
         return carName.getName();
     }
 

@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 class CarsTest {
 
     @Test
-    void 우승자_한명_테스트(){
-        assertSimpleTest(()->{
+    void 우승자_한명_테스트() {
+        assertSimpleTest(() -> {
             Cars cars = new Cars(Arrays.asList(
                     new Car("aaa"),
                     new Car("bbb"),
@@ -27,8 +27,8 @@ class CarsTest {
     }
 
     @Test
-    void 우승자_2명_테스트(){
-        assertSimpleTest(()->{
+    void 우승자_2명_테스트() {
+        assertSimpleTest(() -> {
             Cars cars = new Cars(Arrays.asList(
                     new Car("aaa"),
                     new Car("bbb"),
@@ -42,13 +42,13 @@ class CarsTest {
             assertThat(winners.getCarList().size()).isEqualTo(2);
             assertThat(winners.getCarList())
                     .extracting("carName")
-                    .contains("aaa","bbb");
+                    .contains("aaa", "bbb");
         });
     }
 
     @Test
-    void 우승자_3명_테스트(){
-        assertSimpleTest(()->{
+    void 우승자_3명_테스트() {
+        assertSimpleTest(() -> {
             Cars cars = new Cars(Arrays.asList(
                     new Car("aaa"),
                     new Car("bbb"),
@@ -63,7 +63,7 @@ class CarsTest {
             assertThat(winners.getCarList().size()).isEqualTo(3);
             assertThat(winners.getCarList())
                     .extracting("carName")
-                    .contains("aaa","bbb","ccc");
+                    .contains("aaa", "bbb", "ccc");
         });
     }
 }

@@ -8,30 +8,30 @@ public class CarName {
 
     private final String name;
 
-    public CarName(String name){
+    public CarName(String name) {
         validate(name);
         this.name = name;
     }
 
-    private void validate(String name){
-        if(name == null || name.isEmpty()){
+    private void validate(String name) {
+        if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("이름은 비어있을 수 없습니다.");
         }
 
-        if(name.length()>MAX_NAME_LENGTH){
+        if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException("이름은 최대 5글자입니다.");
         }
 
-        if(name.contains(" ")){
+        if (name.contains(" ")) {
             throw new IllegalArgumentException("이름에 공백은 입력할 수 없습니다.");
         }
 
-        if(!ALLOWED.matcher(name).matches()){
+        if (!ALLOWED.matcher(name).matches()) {
             throw new IllegalArgumentException("이름에 특수문자는 입력할 수 없습니다.");
         }
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 }

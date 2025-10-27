@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 
 class CarTest {
     @Test
-    void Car_생성_테스트(){
-        assertSimpleTest(()->{
+    void Car_생성_테스트() {
+        assertSimpleTest(() -> {
             Car car = new Car("zzzzz");
             assertThat(car.getCarName()).isEqualTo("zzzzz");
             assertThat(car.getPosition()).isEqualTo(0);
@@ -17,8 +17,8 @@ class CarTest {
     }
 
     @Test
-    void Car_move_테스트(){
-        assertSimpleTest(()->{
+    void Car_move_테스트() {
+        assertSimpleTest(() -> {
             Car car = new Car("z");
             car.move();
             assertThat(car.getPosition()).isEqualTo(1);

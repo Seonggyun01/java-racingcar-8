@@ -17,7 +17,7 @@ public class RacingController {
         this.outputView = outputView;
     }
 
-    public void run(){
+    public void run() {
         String inputCarName;
         String inputCount;
 
@@ -47,7 +47,7 @@ public class RacingController {
     private void racingGamePlay(Cars cars, Count count) {
         outputView.printResultMessage();
         Game game = new Game(cars);
-        for(int i = 0; i< count.getCount(); i++){
+        for (int i = 0; i < count.getCount(); i++) {
             game.play();
             printRoundResult(cars);
         }
@@ -57,7 +57,7 @@ public class RacingController {
         String inputCount;
         outputView.printCountPrompt();
         inputCount = inputView.readCount();
-        if(inputCount==null||inputCount.isEmpty()){
+        if (inputCount == null || inputCount.isEmpty()) {
             throw new IllegalArgumentException("횟수를 입력해주세요.");
         }
         return inputCount;
@@ -67,15 +67,14 @@ public class RacingController {
         String inputCarName;
         outputView.printCarNamesPrompt();
         inputCarName = inputView.readCarNames();
-        if(inputCarName==null || inputCarName.isEmpty()){
+        if (inputCarName == null || inputCarName.isEmpty()) {
             throw new IllegalArgumentException("자동차 이름을 입력해주세요.");
         }
         return inputCarName;
     }
 
     private void printRoundResult(Cars cars) {
-        cars.getCarList().
-                forEach(car->outputView.printNameAndPosition(car.getCarName(), car.getPosition()));
+        cars.getCarList().forEach(car -> outputView.printNameAndPosition(car.getCarName(), car.getPosition()));
         outputView.printLine();
     }
 }
