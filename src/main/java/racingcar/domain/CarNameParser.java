@@ -6,9 +6,9 @@ public class CarNameParser {
     private CarNameParser() {
     }
 
-    public static List<String> parse(String rawCarnames) {
+    public static List<String> parse(String rawCarNames) {
 
-        String[] parsedCarname = rawCarnames.split(",", -1);
-        return List.of(parsedCarname);
+        String[] parsedCarName = rawCarNames.split(",", -1);
+        return List.of(parsedCarName);
     }
 }
